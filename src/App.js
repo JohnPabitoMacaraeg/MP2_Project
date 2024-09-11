@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
-import techGif from "./tech.gif";
 
 function App() {
   const [productInfo, setProductInfo] = useState("");
   const [books, setBooks] = useState([]);
   const [bookDetails, setBookDetails] = useState("");
   const [loading, setLoading] = useState(false);
+  const [searchMade, setSearchMade] = useState(false); // Track if a search has been made
 
   const showLoading = () => setLoading(true);
   const hideLoading = () => setLoading(false);
@@ -61,6 +61,7 @@ function App() {
     const query = document.getElementById("search-input").value;
     if (query) {
       showLoading();
+      setSearchMade(true); // Set searchMade to true
       try {
         const response = await fetch(
           `https://openlibrary.org/search.json?q=${query}`
@@ -171,6 +172,7 @@ function App() {
             id="results"
             className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"
           >
+            {books.length === 0 && searchMade && <p>No books found</p>}
             {books.map((book) => (
               <div className="col" key={book.key}>
                 <div className="book">
@@ -197,7 +199,6 @@ function App() {
                 </div>
               </div>
             ))}
-            {books.length === 0 && <p>No books found</p>}
           </div>
           <div
             id="loading"

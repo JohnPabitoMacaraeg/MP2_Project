@@ -8,17 +8,18 @@ body {
 
 /* Hero Section */
 .hero {
-  background: url("./tech.gif") no-repeat center center/cover;
+  background: url("./tech.gif") no-repeat center center;
+  background-size: cover;
   color: white;
   text-align: center;
   padding: 100px 0;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 90%;
   margin: auto;
+  padding: 0 20px;
 }
-
 .hero h1 {
   font-size: 48px;
   margin-bottom: 20px;
@@ -31,14 +32,14 @@ body {
 
 /* Main Section */
 main {
-  padding: 40px 20px;
+  padding: 20px;
   background-color: #fff;
 }
 
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 20px;
   background: #f8f9fa;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -121,4 +122,23 @@ footer {
   background-color: #343a40;
   color: white;
   padding: 10px;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 0; /* Adjust padding for smaller screens */
+  }
+
+  .hero h1 {
+    font-size: 32px; /* Smaller font size for h1 */
+  }
+
+  .hero p {
+    font-size: 18px; /* Smaller font size for paragraphs */
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
 }
