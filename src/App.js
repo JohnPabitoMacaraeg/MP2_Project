@@ -6,7 +6,7 @@ function App() {
   const [books, setBooks] = useState([]);
   const [bookDetails, setBookDetails] = useState("");
   const [loading, setLoading] = useState(false);
-  const [searchMade, setSearchMade] = useState(false); // Track if a search has been made
+  const [searchMade, setSearchMade] = useState(false);
 
   const showLoading = () => setLoading(true);
   const hideLoading = () => setLoading(false);
@@ -61,7 +61,7 @@ function App() {
     const query = document.getElementById("search-input").value;
     if (query) {
       showLoading();
-      setSearchMade(true); // Set searchMade to true
+      setSearchMade(true);
       try {
         const response = await fetch(
           `https://openlibrary.org/search.json?q=${query}`
@@ -140,7 +140,7 @@ function App() {
             className="btn btn-primary btn-block"
             onClick={fetchProductInfo}
           >
-            Fetch Product Info
+            Search
           </button>
           <div
             id="productInfo"
@@ -200,17 +200,21 @@ function App() {
               </div>
             ))}
           </div>
+
+          {/* Loading Spinner */}
           <div
             id="loading"
-            className={`hidden text-center ${loading ? "" : "hidden"}`}
+            className={`text-center ${loading ? "" : "d-none"}`}
           >
             <div className="spinner-border" role="status">
               <span className="visually-hidden">Loading...</span>
             </div>
           </div>
+
+          {/* Book Details */}
           <div
             id="book-details"
-            className={`hidden ${bookDetails ? "" : "hidden"}`}
+            className={bookDetails ? "mt-4" : "d-none"}
             dangerouslySetInnerHTML={{ __html: bookDetails }}
           ></div>
         </section>
