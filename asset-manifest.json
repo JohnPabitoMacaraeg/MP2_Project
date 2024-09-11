@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/MP2_Project/static/css/main.0207ffb8.css",
+    "main.js": "/MP2_Project/static/js/main.f075569b.js",
+    "static/media/tech.gif": "/MP2_Project/static/media/tech.32cc69c48e157d0fcf5d.gif",
+    "index.html": "/MP2_Project/index.html",
+    "main.0207ffb8.css.map": "/MP2_Project/static/css/main.0207ffb8.css.map",
+    "main.f075569b.js.map": "/MP2_Project/static/js/main.f075569b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0207ffb8.css",
+    "static/js/main.f075569b.js"
+  ]
+}
