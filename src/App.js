@@ -128,7 +128,7 @@ function App() {
       <main>
         {/* Barcode Lookup Section */}
         <section id="barcode-section" className="container my-5">
-          <h2>Search Product Information</h2>
+          <h2>Search Product</h2>
           <input
             type="text"
             id="barcode"
@@ -151,7 +151,7 @@ function App() {
 
         {/* Web Library Section */}
         <section id="library-section" className="container my-5">
-          <h2>Your Search Result</h2>
+          <h2>Search Book</h2>
           <form id="search-form" className="mb-4" onSubmit={handleBookSearch}>
             <input
               type="text"
